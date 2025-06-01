@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronoscribe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chronoscribe</h1>
+        </header>
+        <section id="input-area">
+            <input type="text" id="new-task" placeholder="Add a new task...">
+            <input type="date" id="task-due-date" aria-label="Due Date">
+            <select id="task-priority-input" aria-label="Task Priority">
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <button id="add-task">Add Task</button>
+        </section>
+
+        <section id="pomodoro-section">
+            <h2>Focus Session</h2>
+            <div id="focus-task-display">No task selected.</div>
+            <div id="timer-display">25:00</div>
+            <div id="timer-controls">
+                <button id="start-timer">Start</button>
+                <button id="pause-timer">Pause</button>
+                <button id="reset-timer">Reset</button>
+            </div>
+            <div id="status-message">Ready to focus!</div>
+        </section>
+
+        <section id="filter-sort-area">
+            <select id="filter-priority">
+                <option value="">Filter by Priority</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <button id="sort-due-date">Sort by Due Date</button>
+        </section>
+
+        <section id="task-list-area">
+            <h2 id="today-heading">Today <span class="task-count"></span></h2>
+            <ul id="today-tasks" class="task-list"></ul>
+
+            <h2 id="tomorrow-heading">Tomorrow <span class="task-count"></span></h2>
+            <ul id="tomorrow-tasks" class="task-list"></ul>
+
+            <h2 id="upcoming-heading">Upcoming <span class="task-count"></span></h2>
+            <ul id="upcoming-tasks" class="task-list"></ul>
+
+            <h2 id="completed-heading">Completed Tasks <span class="task-count"></span></h2>
+            <ul id="completed-tasks" class="task-list"></ul>
+            <button id="clear-completed-btn" style="display: none;">Clear All Completed</button>
+        </section>
+        <footer>
+            <p>&copy; 2025 Chronoscribe. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="confirmation-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 id="modal-message"></h3>
+            <div class="modal-buttons">
+                <button class="confirm-btn" id="modal-confirm-btn">Confirm</button>
+                <button class="cancel-btn" id="modal-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
